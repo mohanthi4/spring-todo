@@ -1,6 +1,7 @@
 package org.learning.todo.service;
 
 import org.junit.jupiter.api.Test;
+import org.learning.todo.repository.TodoRepo;
 import org.learning.todo.views.TodoView;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +12,8 @@ class TodoServiceTest {
     @Test
     void shouldCreateATodo() {
         IdGenerator idGenerator = mock(IdGenerator.class);
-        TodoService todoService = new TodoService(idGenerator);
+        TodoRepo todoRepo=mock(TodoRepo.class);
+        TodoService todoService = new TodoService(idGenerator,todoRepo);
 
         when(idGenerator.generate()).thenReturn("TD1", "T1", "T2");
 
