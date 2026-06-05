@@ -33,6 +33,7 @@ public class TaskController {
         }
     }
 
+
     @PatchMapping("/{taskId}/toggleStatus")
     public ResponseEntity<TaskView> toggleTaskStatus(@PathVariable String todoId, @PathVariable String taskId) {
         logger.info("Received request to toggle status in todo {}, task {}", todoId, taskId);
@@ -48,3 +49,4 @@ public class TaskController {
         }
     }
 }
+
